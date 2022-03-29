@@ -6,8 +6,8 @@ class Student:
         self.marks1 = marks1
         self.marks2 = marks2
 
-    def accept(self, Name, ID, marks1, marks2):
-        ob = Student(Name, ID, marks1, marks2)
+    def accept(self, name, ID, marks1, marks2):
+        ob = Student(name, ID, marks1, marks2)
         ls.append(ob)
 
     def display(self, ob):
