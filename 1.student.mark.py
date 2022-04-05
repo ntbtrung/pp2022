@@ -40,7 +40,7 @@ def inputMark(coursesid, students):
     print(f"Enter mark of the course {coursesid} for student: ")
     for id in students:
         mark = float(input(f"- Student {students[id]['name']}"))
-        students[id]['marks'][coursesid] = mark
+        students[id]['mark'][coursesid] = mark
 
 def listCourses(courses):
     print("\n All courses list")
