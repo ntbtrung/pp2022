@@ -58,7 +58,7 @@ def listStudents(students):
         print(f"{id:<10} {students[id]['name']: <20} {students[id]['dob']: <15}")
 
 def showMark(coursesid, students):
-    print("\n All marks for the course {coursesid}")
+    print(f"\n All marks for the course {courses[id]}")
     for id in students:
         print(f"{students[id]['name']: <20} {students[id]['mark'][coursesid]}")
 
