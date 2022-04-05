@@ -15,7 +15,7 @@ def inputStudentInfo(studentCount):
         students[id] = {
             "name": name,
             "dob": dob,
-            "marks": {}
+            "mark": {}
         }
 
     return students
@@ -37,7 +37,7 @@ def inputCourseInfo(courseCount):
     return courses
 
 def inputMark(coursesid, students):
-    print(f"Enter marks of the course {coursesid} for students: ")
+    print(f"Enter mark of the course {coursesid} for student: ")
     for id in students:
         mark = float(input(f"- Student {students[id]['name']}"))
         students[id]['marks'][coursesid] = mark
