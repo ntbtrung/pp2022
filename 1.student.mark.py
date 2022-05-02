@@ -49,11 +49,12 @@ def inputCourseInfo(courseCount):
     return courses
 
 
-def inputMark(courseid, students):
-    print(f"Enter marks of the course {courseid} for students: ")
-    for student in students:
-        mark = float(input(f"- Student {student['name']}\n"))
-        student['marks'][courseid] = mark
+def inputMark(coursesid, students):
+    for courseid in coursesid:
+        print(f"Enter marks of the course {courseid} for students: ")
+        for student in students:
+            mark = float(input(f"- Student {student['name']}\n"))
+            student['marks'][courseid] = mark
 
         
 def listStudents(students):
@@ -68,16 +69,19 @@ def listCourses(courses):
         print(f"{course['id']: <10} {course['name']: <20}")
 
         
-def selectCourse(courses):
-    listCourses(courses)
-    courseid = input("Enter course id from the table above: ")
-    return courseid
+def selectCourse(courseCount):
+    coursesid = []
+    print("Select order for the course id to display")
+    for i in range(0, courseCount):
+        courseid = input(f"Display position {i+1} has id: ")
+        coursesid.append(courseid)
+    return coursesid
 
-
-def showMark(courseid, students):
-    print(f'\n All marks for the course {courseid}')
-    for student in students:
-        print(f"{student['name']: <20} {student['marks'][courseid]}")
+def showMark(coursesid, students):
+    for courseid in coursesid:
+        print(f'\n All marks for the course {courseid}')
+        for student in students:
+            print(f"{student['name']: <20} {student['marks'][courseid]}")
 
         
 studentCount = inputStudentCount()
@@ -88,8 +92,7 @@ courseCount = inputCourseCount()
 courses = inputCourseInfo(courseCount)
 listCourses(courses)
 
-courseid = selectCourse(courses)
+courseid = selectCourse(courseCount)
 inputMark(courseid, students)
 
-courseid = selectCourse(courses)
 showMark(courseid, students)
